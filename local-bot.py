@@ -134,8 +134,6 @@ async def on_member_join(member):
   user = client.get_user(member.id)
   await user.send(embed=embed)
 
-
-
 @client.command()
 async def setroles(ctx):
   channel = ctx.message.channel
