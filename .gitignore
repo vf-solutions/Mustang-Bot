@@ -1,0 +1,9 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+.vscode/*
+*.code-workspace
+
+# Local History for Visual Studio Code
+.history/
+assets/token.txt
+assets/imgur_token.txt
