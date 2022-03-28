@@ -1,5 +1,6 @@
 # invite link:
 # https://discord.com/api/oauth2/authorize?client_id=744024313476415540&permissions=8&scope=bot
+# run on heroku server
 
 import discord
 from discord.ext import commands
@@ -8,6 +9,7 @@ from discord.utils import get
 from constants import *
 
 import os
+import psutil
 
 intents = discord.Intents.all()
 client = commands.Bot(command_prefix = '$', intents=intents)
@@ -161,5 +163,14 @@ async def test(ctx, *, arg):
 async def ping(ctx):
   print(ctx)
   await ctx.send(f'Pong! {round(client.latency * 1000)} ms')
+
+@client.command()
+async def computer_stats(ctx):
+  print(ctx)
+  cpu = psutil.cpu_percent(4)
+  ram = psutil.virtual_memory()[2]
+  disk = psutil.disk_usage("/")[3]
+  await ctx.send(f'CPU Usage: {cpu}%\nRAM Usage: {ram}%\nDisk Usage: {disk}%')
+  print(f'CPU Usage: {cpu}%\nRAM Usage: {ram}%\nDisk Usage: {disk}%')
 
 client.run(getToken())
