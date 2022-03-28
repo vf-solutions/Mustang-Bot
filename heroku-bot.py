@@ -45,7 +45,8 @@ async def on_message(message):
   elif message.channel.id == 957465271830970389:
     general = message.guild.get_channel(957465202767564883)
     rules = message.guild.get_channel(957466979936129044)
-    message = f'Welcome {message.author.mention}! Make sure to check {rules.mention} for server rules and roles.'
+    roles = message.guild.get_channel(957874874037202944)
+    message = f'Welcome {message.author.mention}! Make sure to check {rules.mention} for server rules and {roles.mention} for roles.'
     await general.send(message)
   else:
     print(message.author.name)
@@ -124,8 +125,6 @@ async def on_member_join(member):
   print(guild)
   rules = guild.get_channel(957466979936129044)
   intro = guild.get_channel(957465271830970389)
-  pick_roles = guild.get_channel(745093331318734989)
-  
   
   embed=discord.Embed(color=0xC99117, title="Welcome!", description=f"{member.mention}, Welcome to Cal Poly '26! Tell us a little bit about yourself in {intro.mention} to gain full access!\nUnsure how to do so? Check {rules.mention} for a quick example!")
   embed.set_thumbnail(url="https://media.discordapp.net/attachments/957716447755374673/957761766501257226/Cal-Poly-University-Seal.png")
