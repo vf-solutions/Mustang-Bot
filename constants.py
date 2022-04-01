@@ -1,10 +1,10 @@
 special_roles = {
     'Gender': {
-    "🤷" : "any pronouns",
-    "👩" : "she/her/hers",
-    "👨" : "he/him/his",
-    "🧑" : "they/them/theirs",
-    "❔" : "neopronoun (ask me)"
+    "🔴" : "any pronouns",
+    "🟠" : "she/her/hers",
+    "🟡" : "he/him/his",
+    "🟢" : "they/them/theirs",
+    "🔵" : "neopronoun (ask me)"
   },
   'Year': {
     "6️⃣" : "Class of 2026",
@@ -26,6 +26,11 @@ special_roles = {
   }
 }
 all_roles_dict = {
+  "🔴" : "any pronouns",
+  "🟠" : "she/her/hers",
+  "🟡" : "he/him/his",
+  "🟢" : "they/them/theirs",
+  "🔵" : "neopronoun (ask me)",
   "6️⃣" : "Class of 2026",
   "5️⃣" : "Class of 2025",
   "4️⃣" : "Class of 2024",
@@ -40,4 +45,4 @@ all_roles_dict = {
   "📦" : "Misc. Channels",
 }
 
-all_roles_list = ["6️⃣", "5️⃣", "4️⃣", "3️⃣", "🗜️", "📈", "🌽", "🏗️", "📖", "🔢", "🇭", "📦"]
+all_roles_list = ["🔴", "🟠", "🟡", "🟢", "🔵", "6️⃣", "5️⃣", "4️⃣", "3️⃣", "🗜️", "📈", "🌽", "🏗️", "📖", "🔢", "🇭", "📦"]
