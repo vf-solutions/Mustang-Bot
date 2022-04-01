@@ -1,4 +1,11 @@
 special_roles = {
+    'Gender': {
+    "🤷" : "any pronouns",
+    "👩" : "she/her/hers",
+    "👨" : "he/him/his",
+    "🧑" : "they/them/theirs",
+    "❔" : "neopronoun (ask me)"
+  },
   'Year': {
     "6️⃣" : "Class of 2026",
     "5️⃣" : "Class of 2025",
