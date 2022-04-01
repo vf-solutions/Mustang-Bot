@@ -1,5 +1,5 @@
 special_roles = {
-    'Gender': {
+  'Gender': {
     "🔴" : "any pronouns",
     "🟠" : "she/her/hers",
     "🟡" : "he/him/his",
