@@ -11,6 +11,11 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+      time: "13:00"
+    # Raise all python pull requests with custom labels
+    labels:
+      - "python"
+      - "dependencies"
 
   # Maintain dependencies for pipenv
   - package-ecosystem: "pip" # See documentation for possible values
@@ -19,4 +24,4 @@ updates:
       interval: "daily"
     ignore:
       - dependency-name: "python"
-        update-types: ["version-update:semver-major"]
+      - update-types: ["version-update:semver-major"]
