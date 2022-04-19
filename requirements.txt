@@ -4,4 +4,4 @@ pycodestyle==2.8.0
 chess==1.4.0
 cairosvg==2.5.1
 chess.com==1.4.1
-requests==2.25.1
+requests==2.27.1
