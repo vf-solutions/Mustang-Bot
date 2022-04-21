@@ -1,8 +1,6 @@
 {
   "recommendations": [
     "ms-python.python",
-    "ms-python.vscode-pylance",
-    "ms-toolsai.jupyter",
-    "ms-toolsai.jupyter-renderers"
+    "ms-python.vscode-pylance"
   ]
 }
