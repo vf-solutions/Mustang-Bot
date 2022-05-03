@@ -178,5 +178,8 @@ async def computer_stats(ctx):
 @client.command()
 async def major_count(ctx):
   print(ctx)
+  out = discord.Embed(color=0x154734, title="Major Count", description=f"test desc")
+  out.set_thumbnail(url=ctx.guild.icon_url)
+  await ctx.send(embed=out)
 
 client.run(getToken())
