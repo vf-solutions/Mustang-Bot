@@ -175,4 +175,8 @@ async def computer_stats(ctx):
   await ctx.send(f'CPU Usage: {cpu}%\nRAM Usage: {ram}%\nDisk Usage: {disk}%')
   print(f'CPU Usage: {cpu}%\nRAM Usage: {ram}%\nDisk Usage: {disk}%')
 
+@client.command()
+async def major_count(ctx):
+  print(ctx)
+
 client.run(getToken())
