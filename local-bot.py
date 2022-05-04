@@ -3,10 +3,12 @@
 # python local-bot.py
 
 from email import message
+
 import discord
 from discord.ext import commands
 from discord.utils import get
 
+import json
 from constants import *
 
 # import os
@@ -178,6 +180,11 @@ async def computer_stats(ctx):
 @client.command()
 async def major_count(ctx):
   print(ctx)
+  introductions = ctx.guild.get_channel(971298824779862026)
+  history = await introductions.history(oldest_first=True).flatten()
+  for i in range(len(history)):
+    print(getMajor(history[i].content))
+
   out = discord.Embed(color=0x154734, title="Major Count", description=f"test desc")
   out.set_thumbnail(url=ctx.guild.icon_url)
   await ctx.send(embed=out)
