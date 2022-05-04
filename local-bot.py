@@ -26,6 +26,18 @@ def getToken():
 def getID():
   return f"{client.user.id}"
 
+def getMajor(message):
+  line = ""
+  message = str(message)
+  try:
+    #retrieve 2nd line of message 
+    #this method doesn't rely on newline characters, instead using the # in line 1: User#0000
+    line = message[message.find("#") + 5:]
+    line = line[:line.find("3")].strip()
+    return line
+  except ValueError:
+    return ""
+
 @client.event
 async def on_ready():
   await client.change_presence(status=discord.Status.online, activity=discord.Game(name="React to my messages in #welcome-and-rules to show others the classes you are in"))
