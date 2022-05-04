@@ -1,11 +1,13 @@
 {
-  "major":"aerospace engineering"
+  "major":"aerospace engineering",
+  "aliases":["aero"]
 },
 {
   "major":"agricultural and environmental plant sciences"
 },
 {
-  "major":"agricultural business"
+  "major":"agricultural business",
+  "aliases":["agribusiness"]
 },
 {
   "major":"agricultural communication"
@@ -26,28 +28,34 @@
   "major":"architectural engineering"
 },
 {
-  "major":"architecture"
+  "major":"architecture",
+  "aliases":["arch"]
 },
 {
   "major":"art and design"
 },
 {
-  "major":"biochemistry"
+  "major":"biochemistry",
+  "aliases":["biochem"]
 },
 {
-  "major":"biological sciences"
+  "major":"biological sciences",
+  "aliases":["biology","bio"]
 },
 {
-  "major":"biomedical engineering"
+  "major":"biomedical engineering",
+  "aliases":["biomed","bmed"]
 },
 {
   "major":"bioresource and agricultural engineering"
 },
 {
-  "major":"business administration"
+  "major":"business administration",
+  "aliases":["Bus Admin"]
 },
 {
-  "major":"chemistry"
+  "major":"chemistry",
+  "aliases":["chem"]
 },
 {
   "major":"child development"
@@ -56,7 +64,8 @@
   "major":"city and regional planning"
 },
 {
-  "major":"civil engineering"
+  "major":"civil engineering",
+  "aliases":["civil"]
 },
 {
   "major":"communication studies"
@@ -65,10 +74,12 @@
   "major":"comparative ethnic studies"
 },
 {
-  "major":"computer engineering"
+  "major":"computer engineering",
+  "aliases":["comp e", "cpe"]
 },
 {
-  "major":"computer science"
+  "major":"computer science",
+  "aliases":["cs","compsci","comp sci"]
 },
 {
   "major":"construction management"
@@ -77,16 +88,19 @@
   "major":"dairy science"
 },
 {
-  "major":"economics"
+  "major":"economics",
+  "aliases":["econ"]
 },
 {
-  "major":"electrical engineering"
+  "major":"electrical engineering",
+  "aliases":["ee"]
 },
 {
   "major":"english"
 },
 {
-  "major":"environmental earth and soil sciences"
+  "major":"environmental earth and soil sciences",
+  "aliases":["environmental earth & soil sciences","earth and soil science"]
 },
 {
   "major":"environmental engineering"
@@ -140,13 +154,16 @@
   "major":"marine sciences"
 },
 {
-  "major":"materials engineering"
+  "major":"materials engineering",
+  "aliases":["MatEng"]
 },
 {
-  "major":"mathematics"
+  "major":"mathematics",
+  "aliases":["math"]
 },
 {
-  "major":"mechanical engineering"
+  "major":"mechanical engineering",
+  "aliases":["mech e","mech. e","meche"]
 },
 {
   "major":"microbiology"
@@ -164,16 +181,15 @@
   "major":"physics"
 },
 {
-  "major":"physics"
-},
-{
-  "major":"political science"
+  "major":"political science",
+  "aliases":["polisci"]
 },
 {
   "major":"public health"
 },
 {
-  "major":"psychology"
+  "major":"psychology",
+  "aliases":["psych"]
 },
 {
   "major":"recreation, parks, and tourism administration"
@@ -182,16 +198,19 @@
   "major":"sociology"
 },
 {
-  "major":"software engineering"
+  "major":"software engineering",
+  "aliases":["se"]
 },
 {
   "major":"spanish"
 },
 {
-  "major":"statistics"
+  "major":"statistics",
+  "aliases":["stats"]
 },
 {
-  "major":"theatre arts"
+  "major":"theatre arts",
+  "aliases":["theater arts"]
 },
 {
   "major":"wine and viticulture"
