@@ -29,7 +29,7 @@ In the case you are interested in just using the bot, you can invite the bot to 
 
 ## Method 2: Running it Locally
 
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and running follow these instructions.
 
 ### Prerequisites
 
@@ -58,7 +58,6 @@ To get a local copy up and running follow these simple example steps.
     ```sh
     git clone https://github.com/Kaweees/Mustang-Bot.git
     ```
-
 3. Install/update project requirments (administrator permissions may be required)
     ```sh
     pip install upgrade
@@ -66,46 +65,61 @@ To get a local copy up and running follow these simple example steps.
     ```
 
 ### Before Running
-1. Open `token.txt` and copy and paste the Discord Token so that the corresponding Discord bot is able to run the given program.
+1. Configure the following environment variables in a `.env` file for the bot
+  - `TOKEN`: (bot token)[https://discordpy.readthedocs.io/en/stable/discord.html]
 
-## Running locally
-In the case you are interested in running the bot locally, you can follow these instructions: 
-1. Open cmd and navigate to the directory where the source code for this project can be found.
-2. Once on the root directory of this project, run `python filepath/local-bot.py`
+### Running locally
+1. Move to the root directory
+    ```sh
+    cd Mustang-Bot
+    ```
 
-## Hosting via Heroku
-In the case you are interested in running the bot via Heroku, you can follow these instructions:
-### Via Heroku Git
+2. Run the bot
+    ```sh
+    python boy.py
+    ````
+
+## Method 2: Hosting via Heroku
+
+In the case you are interested in running the bot via Heroku, you can follow these instructions.
+
+### Via Heroku CLI
 1. Log onto Heroku.
+    ```sh
+    heroku login
+    ```
 2. Create a new application or open an existing application. Note the name of the application.
 3. Go to `Settings > Add Build path > Python`
 4. Install the Heroku CLI by following [this link](https://devcenter.heroku.com/articles/heroku-cli).
-5. Navigate to the directory of the bot.
-6. Create two files named `Procfile` and `requirements.txt`
-7. Initialize and commit all of the files in your discord bot directory into a git repository. Sign into heroku via the command line and push the git repository to heroku.
-    ```git
-    heroku login
-    heroku git:clone -a "NAME_OF_HEROKU_APPLICATION_GOES_HERE"
-    git add .
-    git commit -am “whatever commit text you want here”
-    git push heroku master
+5. Move to the root directory
+    ```sh
+    cd Mustang-Bot
     ```
-8. Turn our bot on from heroku dashboard.
-9. Navigate to the Bot Directory run `echo > Procfile` in that directory
-10. Edit `requirements.txt` to include the following:
+6. Create a `.env` file locally and configure it as in [Before Running](###Before-Running)
+7. Push the files to a New or Exsisting Heroku App.
+  - For a New App
+    ```sh
+    heroku create -a example-app
     ```
-    git+https://github.com/Rapptz/discord.py
-    dnspython==2.1.0
-    PyNaCl==1.4.0
-    async-timeout==3.0.1
+  - For an Existing App
+    ```sh
+    heroku git:remote -a "NAME_OF_HEROKU_APPLICATION_GOES_HERE"
     ```
-11. Go to Heroku.com and go to `Resources`. Press `Edit`, and hit the sliding button so that it is on and hit `Confirm`.
-12. The bot should be active after a few minutes, and enjoy!
+8. Deploy the local `main` branch to Heroku remotely
+  - For the local `main` branch
+    ```sh
+    git push heroku main
+    ```
+  - From a branch besides `main`
+    ```sh
+    git push heroku branch-name:main
+    ```
+11. The bot should be active after a few minutes. Enjoy!
 
 ### Via Heroku Website
 1. Log onto Heroku.
 2. Create a new application or open an existing application.
-3. Go to `Deploy > Deployment method > Connect with GitHub` and add this repository. You must have access to this repository on a Github account for this to work, or create your own and include all of the files found in this repository.
+3. Go to `Deploy > Deployment method > Connect with GitHub` and add this repository. You must have access to this repository on a Github account for this to work, or access to a fork of this repository.
 4. Go to `Deploy > Deploy Branch > Main Branch` to depoly the recent version of the Main branch.
 5. Repeat steps 2-4 whenever the Main Branch is updated to have access the latest features of the bot.
 6. Go to `Resources`. Press `Edit`, and hit the sliding button so that it is on and hit `Confirm`.
