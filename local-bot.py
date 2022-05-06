@@ -26,17 +26,33 @@ def getToken():
 def getID():
   return f"{client.user.id}"
 
-def getMajor(message):
+def getMajor(message, majors):
   line = ""
-  message = str(message)
+
   try:
-    #retrieve 2nd line of message 
+    #retrieve 2nd line of message
     #this method doesn't rely on newline characters, instead using the # in line 1: User#0000
     line = message[message.find("#") + 5:]
-    line = line[:line.find("3")].strip()
-    return line
+    line = line[:line.find("3")].strip().replace('\n',' ')
+
+    #major search
+    if any((maj := major['major']) in line for major in majors['majors']):
+      print(f"Major match: {maj} >> {line}")
+      match = maj
+      return match
+    #alias search
+    elif any([alias in line for alias in major['aliases']] for major in majors['majors'] if(major.get('aliases'))):
+      for major in majors['majors']:
+        if(major.get('aliases')):
+            for alias in major['aliases']:
+              if(alias in line):
+                match = major['major']
+                print(f"Alias match: {match} >> {line}")
+                return match
+    else:
+      return False
   except ValueError:
-    return ""
+    return False
 
 @client.event
 async def on_ready():
