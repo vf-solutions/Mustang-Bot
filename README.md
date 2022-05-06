@@ -14,21 +14,26 @@ Source code of Mustang Bot in the Cal Poly Class of 2026 Discord Server
 <!-- BUILT WITH -->
 ### Built With
 
- - python 3:
-   - Discord.py
-   - async
-   - os
-   - psutil
+- Python 3:
+  - Discord.py
+  - async
+  - os
+  - psutil
+  - virtualenv
+- Visual Studio Code
 
 # How to Use Mustang-Bot
-## Method 1: Invite Link:
+
+## Method 1: Invite Link
 In the case you are interested in just using the bot, you can invite the bot to your server by following [this link](https://discord.com/oauth2/authorize?client_id=957743101995274280&permissions=8&scope=bot).
 
-## Method 2: Running it Independently
+## Method 2: Running it Locally
+
+To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-- Working Python 3 >= 3.9.0 installation
+- Working Python 3 >= 3.10.0 installation
   - [pip](https://appuals.com/fix-pip-is-not-recognized-as-an-internal-or-external-command/) is working
 
 - Visual Studio Code
@@ -37,11 +42,24 @@ In the case you are interested in just using the bot, you can invite the bot to 
 
 ### Installation
 
-1. Clone the repo
+1. Create a Virtual Python Environment
+    - Creating a Virtual Enviorment (Linux):
+      ```sh
+      virtualenv .venv
+      source .venv/bin/activate
+      ```
+    - Creating a Virtual Enviorment (Windows):
+      ```sh
+      pip install virtualenv
+      virtualenv .venv
+      .venv/Scripts/activate
+      ```
+2. Clone the repo
     ```sh
     git clone https://github.com/Kaweees/Mustang-Bot.git
     ```
-2. Install/update project requirments (administrator permissions may be required)
+
+3. Install/update project requirments (administrator permissions may be required)
     ```sh
     pip install upgrade
     pip install -r requirements.txt
