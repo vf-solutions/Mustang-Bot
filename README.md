@@ -66,7 +66,7 @@ To get a local copy up and running follow these instructions.
 
 ### Before Running
 1. Configure the following environment variables in a `.env` file for the bot
-  - `TOKEN`: (bot token)[https://discordpy.readthedocs.io/en/stable/discord.html]
+  - `TOKEN`: [bot token](https://discordpy.readthedocs.io/en/stable/discord.html)
 
 ### Running locally
 1. Move to the root directory
