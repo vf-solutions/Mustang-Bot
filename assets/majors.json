@@ -53,7 +53,7 @@
     },
     {
       "major": "business administration",
-      "aliases": ["bus admin"]
+      "aliases": ["bus admin","business"]
     },
     {
       "major": "chemistry",
@@ -157,7 +157,7 @@
     },
     {
       "major": "materials engineering",
-      "aliases": ["mateng"]
+      "aliases": ["mateng","mate"]
     },
     {
       "major": "mathematics",
