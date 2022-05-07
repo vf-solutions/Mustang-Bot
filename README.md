@@ -103,7 +103,7 @@ In the case you are interested in running the bot via Heroku, you can follow the
     ```
   - For an Existing App
     ```sh
-    heroku git:remote -a "NAME_OF_HEROKU_APPLICATION_GOES_HERE"
+    heroku git:remote -a "poly-mustang-bot"
     ```
 8. Deploy the local `main` branch to Heroku remotely
   - For the local `main` branch
@@ -115,6 +115,10 @@ In the case you are interested in running the bot via Heroku, you can follow the
     git push heroku branch-name:main
     ```
 11. The bot should be active after a few minutes. Enjoy!
+12. To stop the bot
+    ```sh
+    heroku ps:stop "poly-mustang-bot"  
+    ```
 
 ### Via Heroku Website
 1. Log onto Heroku.
