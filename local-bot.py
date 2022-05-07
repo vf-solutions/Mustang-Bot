@@ -10,8 +10,9 @@ from discord.utils import get
 
 # import os
 import psutil
-
 import json
+import pytz
+
 from datetime import datetime
 from constants import *
 
@@ -57,8 +58,8 @@ def getMajor(message, majors):
     return False
 
 def getTimeString():
-  now = datetime.now()
-  return now.strftime("%Y/%m%d %H:%M:%S")
+  now = datetime.now(pytz.timezone('America/Los_Angeles'))
+  return now.strftime("%Y-%m-%d %H:%M:%S")
 
 @client.event
 async def on_ready():
@@ -239,7 +240,7 @@ async def major_count(ctx):
   for major, count in nonzero_majors.items():
     desc += f"{major}: {str(count)}\n"
   out = discord.Embed(color=0x154734, title="Major Count", description=desc)
-  out.set_footer(text=f"Mustang Bot")
+  out.set_footer(text=f"Mustang Bot {getTimeString()}")
   await ctx.send(embed=out)
 
 client.run(getToken())
