@@ -2,14 +2,19 @@
 # https://discord.com/api/oauth2/authorize?client_id=744024313476415540&permissions=8&scope=bot
 # run on heroku server
 
+from email import message
+
 import discord
 from discord.ext import commands
 from discord.utils import get
 
-from constants import *
-
 import os
 import psutil
+import json
+import pytz
+
+from datetime import datetime
+from constants import *
 
 intents = discord.Intents.all()
 client = commands.Bot(command_prefix = '$', intents=intents)
@@ -21,6 +26,39 @@ def getToken():
 
 def getID():
   return f"{client.user.id}"
+
+def getMajor(message, majors):
+  line = ""
+
+  try:
+    #retrieve 2nd line of message
+    #this method doesn't rely on newline characters, instead using the # in line 1: User#0000
+    line = message[message.find("#") + 5:]
+    line = line[:line.find("3")].strip().replace('\n',' ')
+
+    #major search
+    if any((maj := major['major']) in line for major in majors['majors']):
+      print(f"Major match: {maj} >> {line}")
+      match = maj
+      return match
+    #alias search
+    elif any([alias in line for alias in major['aliases']] for major in majors['majors'] if(major.get('aliases'))):
+      for major in majors['majors']:
+        if(major.get('aliases')):
+            for alias in major['aliases']:
+              if(alias in line):
+                match = major['major']
+                print(f"Alias match: {match} >> {line}")
+                return match
+    else:
+      print(f"No major found >> {line}")
+      return None
+  except ValueError:
+    return None
+
+def getTimeString():
+  now = datetime.now(pytz.timezone('America/Los_Angeles'))
+  return now.strftime("%Y-%m-%d %H:%M:%S")
 
 @client.event
 async def on_ready():
@@ -127,7 +165,7 @@ async def on_member_join(member):
   print(guild)
   rules = guild.get_channel(957466979936129044)
   intro = guild.get_channel(957465271830970389)
-  
+
   embed=discord.Embed(color=0xC99117, title="Welcome!", description=f"{member.mention}, Welcome to Cal Poly '26! Tell us a little bit about yourself in {intro.mention} to gain full access!\nUnsure how to do so? Check {rules.mention} for a quick example!")
   embed.set_thumbnail(url="https://media.discordapp.net/attachments/957716447755374673/957761766501257226/Cal-Poly-University-Seal.png")
 
@@ -170,7 +208,44 @@ async def computer_stats(ctx):
   cpu = psutil.cpu_percent(4)
   ram = psutil.virtual_memory()[2]
   disk = psutil.disk_usage("/")[3]
-  await ctx.send(f'CPU Usage: {cpu}%\nRAM Usage: {ram}%\nDisk Usage: {disk}%')
+  out = discord.Embed(color=0x154734)
+  out.add_field(name="CPU Usage", value=f"{cpu}%")
+  out.add_field(name="RAM Usage", value=f"{ram}%")
+  out.add_field(name="Disk Usage", value=f"{disk}%")
+  out.set_footer(text=f"Mustang Bot {getTimeString()}")
+  await ctx.send(embed=out)
   print(f'CPU Usage: {cpu}%\nRAM Usage: {ram}%\nDisk Usage: {disk}%')
+
+@client.command()
+async def major_count(ctx):
+  majors = {}
+  with open('assets/majors.json','r') as file:
+    data = file.read()
+    majors = json.loads(data)
+
+  introductions = ctx.guild.get_channel(957465271830970389)
+  history = await introductions.history(oldest_first=True).flatten()
+
+  #create dict of all majors, with counts set to 0
+  majors_count = {major['major']:0 for major in majors['majors']}
+
+  #all keywords needed to be considered a 'legal' Introduction message
+  keywords = ["#","1","2","3","4","5"]
+    
+  for i in range(len(history)):
+    message = history[i].content.lower()
+    
+    #filter out off-topic messages
+    if all(keyword in message for keyword in keywords):
+      if((major := getMajor(message, majors)) is not None):
+        majors_count[major] += 1
+
+  nonzero_majors = {key.title():val for key, val in sorted(majors_count.items(), key=lambda item: item[1], reverse=True) if(val != 0)}
+  desc = ""
+  for major, count in nonzero_majors.items():
+    desc += f"{major}: {str(count)}\n"
+  out = discord.Embed(color=0x154734, title="Major Count", description=desc)
+  out.set_footer(text=f"Mustang Bot {getTimeString()}")
+  await ctx.send(embed=out)
 
 client.run(getToken())
