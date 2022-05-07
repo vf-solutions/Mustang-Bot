@@ -8,13 +8,13 @@ import discord
 from discord.ext import commands
 from discord.utils import get
 
-import json
-from constants import *
-
 # import os
 import psutil
 
+import json
 from datetime import datetime
+from constants import *
+
 intents = discord.Intents.all()
 client = commands.Bot(command_prefix = '$', intents=intents)
 client.remove_command("$help")
@@ -51,6 +51,7 @@ def getMajor(message, majors):
                 print(f"Alias match: {match} >> {line}")
                 return match
     else:
+      print(f"No major found >> {line}")
       return False
   except ValueError:
     return False
@@ -58,6 +59,7 @@ def getMajor(message, majors):
 def getTimeString():
   now = datetime.now()
   return now.strftime("%Y/%m%d %H:%M:%S")
+
 @client.event
 async def on_ready():
   await client.change_presence(status=discord.Status.online, activity=discord.Game(name="React to my messages in #welcome-and-rules to show others the classes you are in"))
@@ -211,14 +213,33 @@ async def computer_stats(ctx):
 
 @client.command()
 async def major_count(ctx):
-  print(ctx)
-  introductions = ctx.guild.get_channel(971298824779862026)
-  history = await introductions.history(oldest_first=True).flatten()
-  for i in range(len(history)):
-    print(getMajor(history[i].content))
+  majors = {}
+  with open('assets/majors.json','r') as file:
+    data = file.read()
+    majors = json.loads(data)
 
-  out = discord.Embed(color=0x154734, title="Major Count", description=f"test desc")
-  out.set_thumbnail(url=ctx.guild.icon_url)
+  introductions = ctx.guild.get_channel(971298824779862026) #change
+  history = await introductions.history(oldest_first=True).flatten()
+
+  #create dict of all majors, with counts set to 0
+  majors_count = {major['major']:0 for major in majors['majors']}
+
+  #all keywords needed to be considered a 'legal' Introduction message
+  keywords = ["#","1","2","3","4","5"]
+    
+  for i in range(len(history)):
+    message = history[i].content.lower()
+    
+    #filter out off-topic messages
+    if all(keyword in message for keyword in keywords):
+      majors_count[getMajor(message, majors)] += 1   
+
+  nonzero_majors = {key.title():val for key, val in sorted(majors_count.items(), key=lambda item: item[1], reverse=True) if(val != 0)}
+  desc = ""
+  for major, count in nonzero_majors.items():
+    desc += f"{major}: {str(count)}\n"
+  out = discord.Embed(color=0x154734, title="Major Count", description=desc)
+  out.set_footer(text=f"Mustang Bot")
   await ctx.send(embed=out)
 
 client.run(getToken())
