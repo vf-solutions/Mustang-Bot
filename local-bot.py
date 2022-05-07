@@ -224,7 +224,7 @@ async def major_count(ctx):
     data = file.read()
     majors = json.loads(data)
 
-  introductions = ctx.guild.get_channel(971298824779862026) #change
+  introductions = ctx.guild.get_channel(957465271830970389)
   history = await introductions.history(oldest_first=True).flatten()
 
   #create dict of all majors, with counts set to 0
@@ -239,7 +239,7 @@ async def major_count(ctx):
     #filter out off-topic messages
     if all(keyword in message for keyword in keywords):
       if((major := getMajor(message, majors)) is not None):
-        majors_count[major] += 1   
+        majors_count[major] += 1
 
   nonzero_majors = {key.title():val for key, val in sorted(majors_count.items(), key=lambda item: item[1], reverse=True) if(val != 0)}
   desc = ""
