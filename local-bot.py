@@ -14,6 +14,7 @@ from constants import *
 # import os
 import psutil
 
+from datetime import datetime
 intents = discord.Intents.all()
 client = commands.Bot(command_prefix = '$', intents=intents)
 client.remove_command("$help")
@@ -54,6 +55,9 @@ def getMajor(message, majors):
   except ValueError:
     return False
 
+def getTimeString():
+  now = datetime.now()
+  return now.strftime("%Y/%m%d %H:%M:%S")
 @client.event
 async def on_ready():
   await client.change_presence(status=discord.Status.online, activity=discord.Game(name="React to my messages in #welcome-and-rules to show others the classes you are in"))
