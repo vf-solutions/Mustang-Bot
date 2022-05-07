@@ -10,10 +10,11 @@ from discord.utils import get
 
 # import os
 import psutil
+
 import json
 import pytz
-
 from datetime import datetime
+
 from constants import *
 
 intents = discord.Intents.all()
@@ -166,7 +167,7 @@ async def on_member_join(member):
   print(guild)
   rules = guild.get_channel(957466979936129044)
   intro = guild.get_channel(957465271830970389)
-  
+
   embed=discord.Embed(color=0xC99117, title="Welcome!", description=f"{member.mention}, Welcome to Cal Poly '26! Tell us a little bit about yourself in {intro.mention} to gain full access!\nUnsure how to do so? Check {rules.mention} for a quick example!")
   embed.set_thumbnail(url="https://media.discordapp.net/attachments/957716447755374673/957761766501257226/Cal-Poly-University-Seal.png")
 
@@ -209,7 +210,12 @@ async def computer_stats(ctx):
   cpu = psutil.cpu_percent(4)
   ram = psutil.virtual_memory()[2]
   disk = psutil.disk_usage("/")[3]
-  await ctx.send(f'CPU Usage: {cpu}%\nRAM Usage: {ram}%\nDisk Usage: {disk}%')
+  out = discord.Embed(color=0x154734)
+  out.add_field(name="CPU Usage", value=f"{cpu}%")
+  out.add_field(name="RAM Usage", value=f"{ram}%")
+  out.add_field(name="Disk Usage", value=f"{disk}%")
+  out.set_footer(text=f"Mustang Bot {getTimeString()}")
+  await ctx.send(embed=out)
   print(f'CPU Usage: {cpu}%\nRAM Usage: {ram}%\nDisk Usage: {disk}%')
 
 @client.command()
@@ -233,7 +239,7 @@ async def major_count(ctx):
     
     #filter out off-topic messages
     if all(keyword in message for keyword in keywords):
-      majors_count[getMajor(message, majors)] += 1   
+      majors_count[getMajor(message, majors)] += 1
 
   nonzero_majors = {key.title():val for key, val in sorted(majors_count.items(), key=lambda item: item[1], reverse=True) if(val != 0)}
   desc = ""
