@@ -10,11 +10,10 @@ from discord.utils import get
 
 # import os
 import psutil
-
 import json
 import pytz
-from datetime import datetime
 
+from datetime import datetime
 from constants import *
 
 intents = discord.Intents.all()
@@ -54,9 +53,9 @@ def getMajor(message, majors):
                 return match
     else:
       print(f"No major found >> {line}")
-      return False
+      return None
   except ValueError:
-    return False
+    return None
 
 def getTimeString():
   now = datetime.now(pytz.timezone('America/Los_Angeles'))
@@ -239,7 +238,8 @@ async def major_count(ctx):
     
     #filter out off-topic messages
     if all(keyword in message for keyword in keywords):
-      majors_count[getMajor(message, majors)] += 1
+      if((major := getMajor(message, majors)) is not None):
+        majors_count[major] += 1   
 
   nonzero_majors = {key.title():val for key, val in sorted(majors_count.items(), key=lambda item: item[1], reverse=True) if(val != 0)}
   desc = ""
