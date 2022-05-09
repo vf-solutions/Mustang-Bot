@@ -176,7 +176,7 @@ async def on_member_join(member):
 async def setroles(ctx):
   channel = ctx.message.channel
   if ctx.message.author.guild_permissions.administrator:
-    async for message in channel.history(limit=200): # clears all of the bot messages in the channel
+    async for message in channel.history(limit=10000): # clears all of the bot messages in the channel
       if message.author == client.user:
         await message.delete()
     await ctx.message.delete()
@@ -224,7 +224,7 @@ async def major_count(ctx):
     majors = json.loads(data)
 
   introductions = ctx.guild.get_channel(957465271830970389)
-  history = await introductions.history(oldest_first=True).flatten()
+  history = await introductions.history(limit=10000,oldest_first=True).flatten()
 
   #create dict of all majors, with counts set to 0
   majors_count = {major['major']:0 for major in majors['majors']}
