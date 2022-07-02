@@ -20,9 +20,29 @@ special_roles = {
     "📖" : "College of Liberal Arts",
     "🔢" : "College of Math and Sci"
   },
+  'University Housing' : {
+    "🦙": "yakʔitʸutʸu",
+    "🧱": "Red Bricks (South Mountain)",
+    "🗻": "North Mountain",
+    "🗼": "Towers (Yosemite/Sierra Madre)",
+    "🏗️" : "Poly Canyon Village",
+    "🏨" : "Cerro Vista"
+  },
+  'University Programs' : {
+    "📚": "Cal Poly Scholars",
+    "👥" : "EOP",
+    "👩‍🚀" : "Honors",
+    "🌳" : "Trio Achievers",
+  },
+  'Gaming Groups' : {
+    "🎮" : "Games",
+    "⛏️" : "Minecraft",
+    "🔫" : "Valorant",
+    "⚔️" : "League of Legends" 
+  },
   'Miscellaneous' : {
-    "🇭": "H",
     "📦" : "Misc. Channels",
+    "🇭": "H"
   }
 }
 all_roles_dict = {
@@ -41,8 +61,22 @@ all_roles_dict = {
   "🏗️" : "College of Architecture",
   "📖" : "College of Liberal Arts",
   "🔢" : "College of Math and Sci",
-  "🇭" : "H",
+  "🦙": "yakʔitʸutʸu",
+  "🧱": "Red Bricks (South Mountain)",
+  "🗻": "North Mountain",
+  "🗼": "Towers (Yosemite/Sierra Madre)",
+  "🏗️" : "Poly Canyon Village",
+  "🏨" : "Cerro Vista",
+  "📚": "Cal Poly Scholars",
+  "👥" : "EOP",
+  "👩‍🚀" : "Honors",
+  "🌳" : "Trio Achievers",
+  "🎮" : "Games",
+  "⛏️" : "Minecraft",
+  "🔫" : "Valorant",
+  "⚔️" : "League of Legends",
   "📦" : "Misc. Channels",
+  "🇭" : "H"
 }
 
-all_roles_list = ["🔴", "🟠", "🟡", "🟢", "🔵", "6️⃣", "5️⃣", "4️⃣", "3️⃣", "🗜️", "📈", "🌽", "🏗️", "📖", "🔢", "🇭", "📦"]
+all_roles_list = ["🔴", "🟠", "🟡", "🟢", "🔵", "6️⃣" , "5️⃣" , "4️⃣" , "3️⃣" , "🗜️", "📈", "🌽", "🏗️", "📖", "🔢", "🦙", "🧱", "🗻", "🗼", "🏗️", "🏨", "📚", "👥", "👩‍🚀", "🌳", "🎮", "⛏️", "🔫", "⚔️", "📦", "🇭"]
