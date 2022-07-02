@@ -1,1 +1,1 @@
-worker: python heroku-bot.py
+worker: python bot.py
