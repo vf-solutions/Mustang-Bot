@@ -2,6 +2,8 @@
 # https://discord.com/api/oauth2/authorize?client_id=744024313476415540&permissions=8&scope=bot
 # run on Heroku server and locally
 
+from email import message
+
 import discord
 from discord.ext import commands
 from discord.utils import get
@@ -24,6 +26,39 @@ client = commands.Bot(command_prefix=commands.when_mentioned_or('$'), intents=in
 def getToken():
   # code to open and read token
   return os.environ.get('TOKEN')
+
+def getMajor(message, majors):
+  line = ""
+
+  try:
+    #retrieve 2nd line of message
+    #this method doesn't rely on newline characters, instead using the # in line 1: User#0000
+    line = message[message.find("#") + 5:]
+    line = line[:line.find("3")].strip().replace('\n',' ')
+
+    #major search
+    if any((maj := major['major']) in line for major in majors['majors']):
+      print(f"Major match: {maj} >> {line}")
+      match = maj
+      return match
+    #alias search
+    elif any([alias in line for alias in major['aliases']] for major in majors['majors'] if(major.get('aliases'))):
+      for major in majors['majors']:
+        if(major.get('aliases')):
+            for alias in major['aliases']:
+              if(alias in line):
+                match = major['major']
+                print(f"Alias match: {match} >> {line}")
+                return match
+    else:
+      print(f"No major found >> {line}")
+      return None
+  except ValueError:
+    return None
+
+def getTimeString():
+  now = datetime.now(pytz.timezone('America/Los_Angeles'))
+  return now.strftime("%Y-%m-%d %H:%M:%S")
 
 def getMajor(message, majors):
   line = ""
