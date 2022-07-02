@@ -1,0 +1,221 @@
+{
+  "majors": [
+    {
+      "major": "aerospace engineering",
+      "aliases": ["aero"]
+    },
+    {
+      "major": "agricultural and environmental plant sciences"
+    },
+    {
+      "major": "agricultural business",
+      "aliases": ["agribusiness"]
+    },
+    {
+      "major": "agricultural communication"
+    },
+    {
+      "major": "agricultural science"
+    },
+    {
+      "major": "agricultural systems management"
+    },
+    {
+      "major": "animal science"
+    },
+    {
+      "major": "anthropology and geography"
+    },
+    {
+      "major": "architectural engineering"
+    },
+    {
+      "major": "architecture",
+      "aliases": ["arch"]
+    },
+    {
+      "major": "art and design"
+    },
+    {
+      "major": "biochemistry",
+      "aliases": ["biochem"]
+    },
+    {
+      "major": "biological sciences",
+      "aliases": ["biology", "bio"]
+    },
+    {
+      "major": "biomedical engineering",
+      "aliases": ["biomed", "bmed"]
+    },
+    {
+      "major": "bioresource and agricultural engineering"
+    },
+    {
+      "major": "business administration",
+      "aliases": ["bus admin","business"]
+    },
+    {
+      "major": "chemistry",
+      "aliases": ["chem"]
+    },
+    {
+      "major": "child development"
+    },
+    {
+      "major": "city and regional planning"
+    },
+    {
+      "major": "civil engineering",
+      "aliases": ["civil"]
+    },
+    {
+      "major": "communication studies"
+    },
+    {
+      "major": "comparative ethnic studies"
+    },
+    {
+      "major": "computer engineering",
+      "aliases": ["comp e", "cpe"]
+    },
+    {
+      "major": "computer science",
+      "aliases": ["cs", "compsci", "comp sci"]
+    },
+    {
+      "major": "construction management"
+    },
+    {
+      "major": "dairy science"
+    },
+    {
+      "major": "economics",
+      "aliases": ["econ"]
+    },
+    {
+      "major": "electrical engineering",
+      "aliases": ["ee"]
+    },
+    {
+      "major": "english"
+    },
+    {
+      "major": "environmental earth and soil sciences",
+      "aliases": ["environmental earth & soil sciences", "earth and soil science"]
+    },
+    {
+      "major": "environmental engineering"
+    },
+    {
+      "major": "environmental management and protection"
+    },
+    {
+      "major": "food science"
+    },
+    {
+      "major": "forest and fire sciences"
+    },
+    {
+      "major": "general engineering"
+    },
+    {
+      "major": "graphic communication"
+    },
+    {
+      "major": "history"
+    },
+    {
+      "major": "industrial engineering"
+    },
+    {
+      "major": "industrial technology and packaging"
+    },
+    {
+      "major": "interdisciplinary studies"
+    },
+    {
+      "major": "journalism"
+    },
+    {
+      "major": "kinesiology"
+    },
+    {
+      "major": "landscape architecture"
+    },
+    {
+      "major": "liberal arts and engineering studies"
+    },
+    {
+      "major": "liberal studies"
+    },
+    {
+      "major": "manufacturing engineering"
+    },
+    {
+      "major": "marine sciences"
+    },
+    {
+      "major": "materials engineering",
+      "aliases": ["mateng","mate"]
+    },
+    {
+      "major": "mathematics",
+      "aliases": ["math"]
+    },
+    {
+      "major": "mechanical engineering",
+      "aliases": ["mech e", "mech. e", "meche"]
+    },
+    {
+      "major": "microbiology"
+    },
+    {
+      "major": "music "
+    },
+    {
+      "major": "nutrition"
+    },
+    {
+      "major": "philosophy"
+    },
+    {
+      "major": "physics"
+    },
+    {
+      "major": "political science",
+      "aliases": ["polisci"]
+    },
+    {
+      "major": "public health"
+    },
+    {
+      "major": "psychology",
+      "aliases": ["psych"]
+    },
+    {
+      "major": "recreation, parks, and tourism administration"
+    },
+    {
+      "major": "sociology"
+    },
+    {
+      "major": "software engineering",
+      "aliases": ["se"]
+    },
+    {
+      "major": "spanish"
+    },
+    {
+      "major": "statistics",
+      "aliases": ["stats"]
+    },
+    {
+      "major": "theatre arts",
+      "aliases": ["theater arts"]
+    },
+    {
+      "major": "wine and viticulture"
+    }
+  ]
+}
