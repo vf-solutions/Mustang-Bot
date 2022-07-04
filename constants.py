@@ -25,7 +25,7 @@ special_roles = {
     "🧱": "Red Bricks (South Mountain)",
     "🗻": "North Mountain",
     "🗼": "Towers (Yosemite/Sierra Madre)",
-    "🏗️" : "Poly Canyon Village",
+    "🏛️" : "Poly Canyon Village",
     "🏨" : "Cerro Vista"
   },
   'University Programs' : {
@@ -65,7 +65,7 @@ all_roles_dict = {
   "🧱": "Red Bricks (South Mountain)",
   "🗻": "North Mountain",
   "🗼": "Towers (Yosemite/Sierra Madre)",
-  "🏗️" : "Poly Canyon Village",
+  "🏛️" : "Poly Canyon Village",
   "🏨" : "Cerro Vista",
   "📚": "Cal Poly Scholars",
   "👥" : "EOP",
@@ -79,4 +79,4 @@ all_roles_dict = {
   "🇭" : "H"
 }
 
-all_roles_list = ["🔴", "🟠", "🟡", "🟢", "🔵", "6️⃣" , "5️⃣" , "4️⃣" , "3️⃣" , "🗜️", "📈", "🌽", "🏗️", "📖", "🔢", "🦙", "🧱", "🗻", "🗼", "🏗️", "🏨", "📚", "👥", "👩‍🚀", "🌳", "🎮", "⛏️", "🔫", "⚔️", "📦", "🇭"]
+all_roles_list = ["🔴", "🟠", "🟡", "🟢", "🔵", "6️⃣" , "5️⃣" , "4️⃣" , "3️⃣" , "🗜️", "📈", "🌽", "🏗️", "📖", "🔢", "🦙", "🧱", "🗻", "🗼", "🏛️", "🏨", "📚", "👥", "👩‍🚀", "🌳", "🎮", "⛏️", "🔫", "⚔️", "📦", "🇭"]
