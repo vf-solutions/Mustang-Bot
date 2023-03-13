@@ -1,7 +1,7 @@
 discord.py==1.7.3
 psutil==5.9.1
 pycodestyle==2.10.0
-chess==1.9.1
+chess==1.9.4
 cairosvg==2.5.2
 chess.com==1.4.1
 requests==2.27.1
