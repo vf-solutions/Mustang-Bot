@@ -5,5 +5,5 @@ chess==1.9.1
 cairosvg==2.5.2
 chess.com==1.4.1
 requests==2.27.1
-pytz==2022.1
+pytz==2023.2
 python-dotenv==0.20.0
