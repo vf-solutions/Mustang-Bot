@@ -3,7 +3,7 @@ psutil==5.9.1
 pycodestyle==2.10.0
 chess==1.9.1
 cairosvg==2.5.2
-chess.com==1.4.1
+chess.com==2.1.0
 requests==2.27.1
 pytz==2022.1
 python-dotenv==0.20.0
